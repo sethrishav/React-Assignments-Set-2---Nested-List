@@ -1,15 +1,18 @@
 import React from 'react'
 import Town fron "./Town";
-export default function Cities(props) {
+const Cities=(props)=> {
     const [click, setClick]=useState(false)
     return (
         <div>
-            <li><button onClick={() => setClick(!click)>{props.cities.name}</button></li>
+            <li onClick={() => setClick(!click)><button >{props.cities.name}</button></li>
             <ul>
-                {click?props.cities.towns.map((towns)=>(
+                {click ? props.cities.towns.map((towns)=>{
+                   return (
                     <Town towns={towns}/>
-                )):""}
+                   )
+                   }):""}
             </ul>
         </div>
     )
 }
+export default Cities; 
