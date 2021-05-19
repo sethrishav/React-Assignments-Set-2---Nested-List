@@ -156,12 +156,12 @@ const states = [
 ];
 
 function App() {
-    return ( 
-            <div id = "main" >
+    return ( <
+            div id = "main" >
             <ul>
-            states.map((states)=>(
-                <State state={states}/>
-            ))
+            {states.map((states)=>{
+                <State states={states}/>
+            })}
             </ul>
            
                     </div>);
