@@ -1,18 +1,20 @@
-import React from 'react'
-import Town fron "./Town";
+import React,{useState} from 'react'
+import Town from "./Town";
 const Cities=(props)=> {
-    const [click, setClick]=useState(false)
+    const [click2, setClick2]=useState(false)
     return (
-        <div>
-            <li onClick={() => setClick(!click)><button >{props.cities.name}</button></li>
+        <>
+            <li onClick={() => setClick2(!click2)} id={`city${props.id}`} >
+                <button >{props.city.name}</button>
+                </li>
             <ul>
-                {click ? props.cities.towns.map((towns)=>{
+                {click2 ? props.city.towns.map((town,i)=>{
                    return (
-                    <Town towns={towns}/>
+                    <Town town={town} key={i+1} id={i+1} />
                    )
-                   }):""}
+                   }): ""}
             </ul>
-        </div>
+        </>
     )
 }
 export default Cities; 
