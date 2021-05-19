@@ -1,10 +1,10 @@
-import React from 'react'
+import React,{useState} from 'react'
 
 const Town=(props)=> {
     return (
-        <div>
-           <li><button>{props.towns.name}</button></li> 
-        </div>
+        <>
+           <li id={`town${props.id}`}><button>{props.town.name}</button></li> 
+        </>
     )
 }
 export default Town; 
