@@ -1,15 +1,19 @@
 import React from 'react'
 import Cities from "./Cities";
-export default function State(props) {
+const State=(props)=> {
     const [click, setClick]=useState(false)
     return (
         <div>
-            <li><button onClick={() => setClick(!click)>{props.states.name}</button></li>
+            <li onClick={() => setClick(!click)>
+            <button>{props.states.name}</button> </li>
             <ul>
-                {click?props.states.cities.map((cities)=>(
+                {click?props.states.cities.map((cities)=>{
+                    return (
                     <Cities cities={cities}/>
-                )):""}
+                    )
+                    }):""}
             </ul>
         </div>
     )
 }
+export default State; 
