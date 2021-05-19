@@ -159,12 +159,13 @@ function App() {
     return ( <
             div id = "main" >
             <ul>
-            {states.map((states)=>{
-                <State states={states}/>
+            {states.map((states,i)=>{
+                return (<State states={states} key={i+1} id={i+1} />
+                )
             })}
             </ul>
            
-                    </div>);
+                    </div>)
                 }
 
                 export default App;
